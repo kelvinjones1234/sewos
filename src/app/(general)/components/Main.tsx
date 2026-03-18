@@ -568,10 +568,58 @@ const Main = () => {
         </div>
       </section>
 
-      <section className="relative bg-[var(--color-primary)] border-t border-white/10 overflow-hidden">
-  {/* ── Background: Large Professional Sweeps ── */}
-  <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04]" aria-hidden="true">
-    <svg className="w-full h-full text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      {/* <section className="relative bg-[var(--color-primary)] border-t border-white/10 overflow-hidden">
+        <div
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.04]"
+          aria-hidden="true"
+        >
+          <svg
+            className="w-full h-full text-white"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="-5%" cy="-50%" r="450" />
+
+            <circle cx="105%" cy="150%" r="600" opacity="0.8" />
+
+            <circle cx="85%" cy="-20%" r="300" opacity="0.5" />
+          </svg>
+        </div>
+
+        <div className="main-container relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {statsData.map((stat, i) => (
+              <div
+                key={i}
+                className={`py-12 border-b md:border-b-0 border-transparent hover:border-[var(--color-secondary)] transition-colors duration-300
+            ${i < 2 ? "md:pr-10 md:border-r md:border-white/10" : ""} 
+            ${i > 0 ? "md:pl-10" : ""}
+          `}
+              >
+                <div className="flex items-baseline gap-3 mb-2">
+                  <span className="font-heading font-bold text-[clamp(2.4rem,4vw,3.5rem)] text-[var(--color-secondary)] leading-none">
+                    {stat.title}
+                  </span>
+                  <span className="font-body font-semibold uppercase text-[0.65rem] tracking-[0.22em] text-white/60">
+                    {stat.subtitle}
+                  </span>
+                </div>
+                <p className="font-body text-[0.9rem] text-white/70 leading-[1.7]">
+                  {stat.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+
+
+      <section className="relative bg-gray-100 border-t border-gray-200 overflow-hidden">
+  
+  {/* ── Background: Abstract Patches (Inverted for light background) ── */}
+  <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]" aria-hidden="true">
+    <svg className="w-full h-full text-black" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       {/* Massive sweep anchoring the top-left */}
       <circle cx="-5%" cy="-50%" r="450" />
       
@@ -590,7 +638,7 @@ const Main = () => {
         <div 
           key={i} 
           className={`py-12 border-b md:border-b-0 border-transparent hover:border-[var(--color-secondary)] transition-colors duration-300
-            ${i < 2 ? "md:pr-10 md:border-r md:border-white/10" : ""} 
+            ${i < 2 ? "md:pr-10 md:border-r md:border-gray-300" : ""} 
             ${i > 0 ? "md:pl-10" : ""}
           `}
         >
@@ -598,11 +646,13 @@ const Main = () => {
             <span className="font-heading font-bold text-[clamp(2.4rem,4vw,3.5rem)] text-[var(--color-secondary)] leading-none">
               {stat.title}
             </span>
-            <span className="font-body font-semibold uppercase text-[0.65rem] tracking-[0.22em] text-white/60">
+            {/* Subtitle changed to gray-500 */}
+            <span className="font-body font-semibold uppercase text-[0.65rem] tracking-[0.22em] text-gray-500">
               {stat.subtitle}
             </span>
           </div>
-          <p className="font-body text-[0.9rem] text-white/70 leading-[1.7]">
+          {/* Description changed to gray-600 */}
+          <p className="font-body text-[0.9rem] text-gray-600 leading-[1.7]">
             {stat.desc}
           </p>
         </div>
