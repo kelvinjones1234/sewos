@@ -527,7 +527,7 @@ const Main = () => {
           />
           
           {/* High-End Monochrome Wash & Blur */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-white backdrop-blur-[.5px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/70 " />
         </div>
 
         {/* Top border strip - Uses Secondary (Teal) */}
