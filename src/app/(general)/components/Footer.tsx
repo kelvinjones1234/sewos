@@ -51,7 +51,7 @@ const Footer = () => {
   return (
     <footer 
       aria-label="Site Footer" 
-      className="relative bg-[var(--color-primary)] pt-16 pb-8 border-t-[4px] border-[var(--color-secondary)] overflow-hidden"
+      className="relative bg-[var(--color-primary)] pt-16 pb-8 overflow-hidden"
     >
       {/* ── Background Circle Patches ── */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-5" aria-hidden="true">

@@ -525,13 +525,12 @@ const Main = () => {
             className="hero-img object-cover"
             priority
           />
-          
+
           {/* High-End Monochrome Wash & Blur */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/70 " />
         </div>
 
         {/* Top border strip - Uses Secondary (Teal) */}
-        {/* <div className="absolute top-0 left-0 right-0 z-10 h-[4px] bg-[var(--color-secondary)]" /> */}
 
         {/* Content */}
         <div className="main-container relative z-10 w-full pb-16 md:pb-20 pt-24 top-[-10vw] md:top-[-4rem]">
@@ -542,9 +541,10 @@ const Main = () => {
             </p>
 
             <h1 className="anim-2 font-heading font-bold text-white uppercase text-[clamp(2.6rem,6vw,5.2rem)] leading-[1.1] tracking-[0.01em] drop-shadow-md">
-              Women of{" "}
-              {/* Highlight uses Secondary (Teal) */}
-              <span className="text-[var(--color-secondary)] drop-shadow-md">Substance</span>
+              Women of {/* Highlight uses Secondary (Teal) */}
+              <span className="text-[var(--color-secondary)] drop-shadow-md">
+                Substance
+              </span>
             </h1>
 
             {/* Divider uses Accent (Deep Red) for a highly professional, subtle pop */}
@@ -565,7 +565,7 @@ const Main = () => {
               >
                 Join Our Mission
               </button>
-              
+
               {/* Secondary Button: Clean white frosted glass, hovers to Teal (Secondary) */}
               <button
                 type="button"
@@ -579,7 +579,7 @@ const Main = () => {
       </section>
 
       <section className="relative bg-gray-200 border-t border-gray-300 overflow-hidden">
-        {/* ── Background: Abstract Patches (Inverted for light background) ── */}
+        {/* ── Background: Abstract Patches ── */}
         <div
           className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
           aria-hidden="true"
@@ -589,13 +589,8 @@ const Main = () => {
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Massive sweep anchoring the top-left */}
             <circle cx="-5%" cy="-50%" r="450" />
-
-            {/* Giant curve anchoring the bottom-right */}
             <circle cx="105%" cy="150%" r="600" opacity="0.8" />
-
-            {/* Subtle intersecting arc on the top-right */}
             <circle cx="85%" cy="-20%" r="300" opacity="0.5" />
           </svg>
         </div>
@@ -606,7 +601,8 @@ const Main = () => {
             {statsData.map((stat, i) => (
               <div
                 key={i}
-                className={`py-12 border-b md:border-b-0 border-[var(--color-secondary)] transition-colors duration-300
+                className={`py-12 md:border-b-0 border-[var(--color-secondary)] transition-colors duration-300
+            ${i !== statsData.length - 1 ? "border-b" : ""} 
             ${i < 2 ? "md:pr-10 md:border-r md:border-gray-300" : ""} 
             ${i > 0 ? "md:pl-10" : ""}
           `}
@@ -615,12 +611,10 @@ const Main = () => {
                   <span className="font-heading font-bold text-[clamp(2.4rem,4vw,3.5rem)] text-[var(--color-secondary)] leading-none">
                     {stat.title}
                   </span>
-                  {/* Subtitle changed to gray-500 */}
                   <span className="font-body font-semibold uppercase text-[0.65rem] tracking-[0.22em] text-gray-500">
                     {stat.subtitle}
                   </span>
                 </div>
-                {/* Description changed to gray-600 */}
                 <p className="font-body text-[0.9rem] text-gray-600 leading-[1.7]">
                   {stat.desc}
                 </p>
@@ -629,7 +623,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-
       {/* ══════════════════════
           MISSION & HISTORY
       ══════════════════════ */}
