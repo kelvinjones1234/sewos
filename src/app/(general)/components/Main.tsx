@@ -568,19 +568,38 @@ const Main = () => {
         </div>
       </section>
 
-      {/* ══════════════════════
-          STATS BAR
-      ══════════════════════ */}
-      <section className="bg-[var(--color-accent)] border-t border-white/10">
-        <div className="main-container">
+      <section className="relative bg-[var(--color-accent)] border-t border-white/10 overflow-hidden">
+        {/* ── Background: Large Professional Sweeps ── */}
+        <div
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.04]"
+          aria-hidden="true"
+        >
+          <svg
+            className="w-full h-full text-white"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Massive sweep anchoring the top-left */}
+            <circle cx="-5%" cy="-50%" r="450" />
+
+            {/* Giant curve anchoring the bottom-right */}
+            <circle cx="105%" cy="150%" r="600" opacity="0.8" />
+
+            {/* Subtle intersecting arc on the top-right */}
+            <circle cx="85%" cy="-20%" r="300" opacity="0.5" />
+          </svg>
+        </div>
+
+        {/* ── Content ── */}
+        <div className="main-container relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {statsData.map((stat, i) => (
               <div
                 key={i}
                 className={`py-12 border-b md:border-b-0 border-transparent hover:border-[var(--color-secondary)] transition-colors duration-300
-                  ${i < 2 ? "md:pr-10 md:border-r md:border-white/10" : ""} 
-                  ${i > 0 ? "md:pl-10" : ""}
-                `}
+            ${i < 2 ? "md:pr-10 md:border-r md:border-white/10" : ""} 
+            ${i > 0 ? "md:pl-10" : ""}
+          `}
               >
                 <div className="flex items-baseline gap-3 mb-2">
                   <span className="font-heading font-bold text-[clamp(2.4rem,4vw,3.5rem)] text-[var(--color-secondary)] leading-none">
@@ -660,30 +679,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════
-          IMPACT QUOTE
-      ══════════════════════ */}
-      {/* <section className="bg-[var(--color-accent)]">
-        <div className="main-container py-20 lg:py-24">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-20">
-            <div className="shrink-0 flex flex-col items-start gap-3">
-              <div className="w-0.5 h-16 bg-[var(--color-secondary)]" />
-              <span className="font-heading font-bold uppercase text-white text-[clamp(1.4rem,2.5vw,2rem)] tracking-[0.06em] leading-[1.2]">
-                Our<br />Impact
-              </span>
-            </div>
-
-            <blockquote className="font-body text-[clamp(1rem,1.8vw,1.25rem)] italic text-white/80 leading-[1.85] border-l-2 border-white/15 pl-8">
-              "We do not just occupy space; we define it. Our influence is measured
-              not by the loudness of our voices, but by the tangible change we bring
-              to our homes, our communities, and our nation. Through 20 years of
-              unwavering commitment, we have proven that when women of substance
-              stand together, the future is rewritten."
-            </blockquote>
-          </div>
-        </div>
-      </section> */}
 
       <section className="relative bg-[var(--color-accent)] overflow-hidden">
         {/* ── Background Sweeping Lines ── */}
