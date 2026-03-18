@@ -6,7 +6,7 @@
 
 :root {
   /* Modern Professional Palette */
-  --color-primary: #0F172A;   /* Slate 900: A sharper, deeper professional navy */
+  --color-primary: #202056;   /* Slate 900: A sharper, deeper professional navy */
   --color-secondary: #0D9488; /* Teal 600: Conveys trust, clarity, and substance */
   --color-bg: #F8FAFC;        /* Crisp, clean slate-tinted background */
   --color-accent: #6D1111;    /* Rose: Reserved for high-priority alerts/actions if needed */
