@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Toggle Button */}
         <button
-          className="lg:hidden p-2 text-[var(--color-primary)]"
+          className="lg:hidden text-[var(--color-primary)]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
         >

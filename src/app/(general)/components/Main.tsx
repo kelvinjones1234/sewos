@@ -97,23 +97,7 @@ const Main = () => {
         </div>
 
         {/* --- Floating Image Patches Layer (Bubbles) --- */}
-        <div className="absolute inset-0 z-[15] pointer-events-none overflow-hidden">
-          {/* Right Side Group */}
-          <div className="absolute top-[15%] right-[5%] lg:top-[10%] lg:right-[8%] w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full border-4 border-white/10 shadow-2xl overflow-hidden opacity-90 transform hover:scale-105 transition-transform duration-700">
-            <img
-              src="/img1.jpeg"
-              alt="Highlight 1"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute top-[50%] right-[-5%] lg:top-[70%] lg:right-[15%] w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full border-4 border-white/10 shadow-2xl overflow-hidden opacity-90 transform hover:scale-105 transition-transform duration-700">
-            <img
-              src="/img2.jpeg"
-              alt="Highlight 2"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        
         {/* ----------------------------------------- */}
 
         {/* Content Layer */}
