@@ -615,7 +615,7 @@ const Main = () => {
 
 
 
-      <section className="relative bg-gray-100 border-t border-gray-200 overflow-hidden">
+      <section className="relative bg-gray-200 border-t border-gray-300 overflow-hidden">
   
   {/* ── Background: Abstract Patches (Inverted for light background) ── */}
   <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]" aria-hidden="true">
