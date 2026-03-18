@@ -511,6 +511,9 @@ const Main = () => {
       {/* ══════════════════════
           HERO
       ══════════════════════ */}
+      {/* ══════════════════════
+          HERO
+      ══════════════════════ */}
       <section className="relative flex items-end overflow-hidden min-h-[92vh]">
         {/* Background */}
         <div className="absolute inset-0 bg-black">
@@ -518,48 +521,55 @@ const Main = () => {
             src="/img3.jpeg"
             alt="South East Women of Substance — assembly"
             fill
+            /* Keeps the grayscale editorial look so your brand colors stand out */
             className="hero-img object-cover"
             priority
           />
-          {/* Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
-          <div className="absolute inset-y-0 left-0 hidden md:block w-[52%] backdrop-blur-[4px] saturate-65 bg-gradient-to-r from-black/20 to-transparent" />
+          
+          {/* High-End Monochrome Wash & Blur */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-white/50 backdrop-blur-[1px]" />
         </div>
 
-        {/* Top border strip */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[3px] bg-[var(--color-secondary)]" />
+        {/* Top border strip - Uses Secondary (Teal) */}
+        {/* <div className="absolute top-0 left-0 right-0 z-10 h-[4px] bg-[var(--color-secondary)]" /> */}
 
         {/* Content */}
         <div className="main-container relative z-10 w-full pb-16 md:pb-20 pt-24 top-[-10vw] md:top-[-4rem]">
           <div className="max-w-[680px]">
-            <p className="anim-1 font-body font-semibold uppercase text-white/90 text-[0.7rem] tracking-[0.3em] mb-5">
+            {/* Overline uses Secondary (Teal) */}
+            <p className="anim-1 font-body font-semibold uppercase text-[var(--color-secondary)] text-[0.7rem] tracking-[0.3em] mb-5 drop-shadow-sm">
               South East Nigeria · Est. 2003
             </p>
 
-            <h1 className="anim-2 font-heading font-bold text-white uppercase text-[clamp(2.6rem,6vw,5.2rem)] leading-[1.1] tracking-[0.01em]">
+            <h1 className="anim-2 font-heading font-bold text-white uppercase text-[clamp(2.6rem,6vw,5.2rem)] leading-[1.1] tracking-[0.01em] drop-shadow-md">
               Women of{" "}
-              <span className="text-[var(--color-secondary)]">Substance</span>
+              {/* Highlight uses Secondary (Teal) */}
+              <span className="text-[var(--color-secondary)] drop-shadow-md">Substance</span>
             </h1>
 
-            <div className="anim-3 w-12 h-0.5 bg-[var(--color-secondary)] my-6" />
+            {/* Divider uses Accent (Deep Red) for a highly professional, subtle pop */}
+            <div className="anim-3 w-12 h-[3px] bg-[var(--color-accent)] my-6 drop-shadow-sm" />
 
-            <p className="anim-3 font-body text-white/80 text-[1.05rem] leading-[1.75] max-w-[520px] mb-9">
+            {/* Main text remains white for readability against the dark wash */}
+            <p className="anim-3 font-body text-white/90 text-[1.05rem] leading-[1.75] max-w-[520px] mb-9 drop-shadow-md">
               A movement of over three million women across the South East
               driving equality, policy reform, and lasting community
               transformation.
             </p>
 
-            <div className="anim-4 flex flex-wrap gap-3">
+            <div className="anim-4 flex flex-wrap gap-4">
+              {/* Primary Button: Uses Teal (Secondary) for high visibility, hovers to Navy (Primary) */}
               <button
                 type="button"
-                className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-3.5 bg-[var(--color-secondary)] hover:opacity-80 transition-opacity"
+                className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-3.5 bg-[var(--color-secondary)] hover:bg-[var(--color-primary)] transition-colors duration-300 shadow-lg"
               >
                 Join Our Mission
               </button>
+              
+              {/* Secondary Button: Clean white frosted glass, hovers to Teal (Secondary) */}
               <button
                 type="button"
-                className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-[13px] bg-transparent border border-white/45 hover:border-white/90 transition-colors"
+                className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-[13px] bg-white/5 border border-white/50 hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] transition-all duration-300 shadow-md backdrop-blur-sm"
               >
                 Learn More
               </button>
@@ -567,51 +577,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-
-      {/* <section className="relative bg-[var(--color-primary)] border-t border-white/10 overflow-hidden">
-        <div
-          className="absolute inset-0 z-0 pointer-events-none opacity-[0.04]"
-          aria-hidden="true"
-        >
-          <svg
-            className="w-full h-full text-white"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="-5%" cy="-50%" r="450" />
-
-            <circle cx="105%" cy="150%" r="600" opacity="0.8" />
-
-            <circle cx="85%" cy="-20%" r="300" opacity="0.5" />
-          </svg>
-        </div>
-
-        <div className="main-container relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            {statsData.map((stat, i) => (
-              <div
-                key={i}
-                className={`py-12 border-b md:border-b-0 border-transparent hover:border-[var(--color-secondary)] transition-colors duration-300
-            ${i < 2 ? "md:pr-10 md:border-r md:border-white/10" : ""} 
-            ${i > 0 ? "md:pl-10" : ""}
-          `}
-              >
-                <div className="flex items-baseline gap-3 mb-2">
-                  <span className="font-heading font-bold text-[clamp(2.4rem,4vw,3.5rem)] text-[var(--color-secondary)] leading-none">
-                    {stat.title}
-                  </span>
-                  <span className="font-body font-semibold uppercase text-[0.65rem] tracking-[0.22em] text-white/60">
-                    {stat.subtitle}
-                  </span>
-                </div>
-                <p className="font-body text-[0.9rem] text-white/70 leading-[1.7]">
-                  {stat.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       <section className="relative bg-gray-200 border-t border-gray-300 overflow-hidden">
         {/* ── Background: Abstract Patches (Inverted for light background) ── */}
