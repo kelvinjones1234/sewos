@@ -51,9 +51,30 @@ const Footer = () => {
   return (
     <footer 
       aria-label="Site Footer" 
-      className="bg-[var(--color-primary)] pt-16 pb-8 border-t-[4px] border-[var(--color-secondary)]"
+      className="relative bg-[var(--color-primary)] pt-16 pb-8 border-t-[4px] border-[var(--color-secondary)] overflow-hidden"
     >
-      <div className="main-container">
+      {/* ── Background Circle Patches ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-5" aria-hidden="true">
+        <svg
+          className="w-full h-full text-white"
+          viewBox="0 0 1440 400"
+          preserveAspectRatio="xMidYMid slice"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Large circle patch on the middle-right */}
+          <circle cx="1250" cy="200" r="350" />
+          
+          {/* Massive sweeping ellipse patch on the bottom-left */}
+          <ellipse cx="150" cy="450" rx="600" ry="250" />
+          
+          {/* Smaller, subtle circle patch peeking from the top center */}
+          <circle cx="700" cy="-50" r="200" opacity="0.6" />
+        </svg>
+      </div>
+
+      {/* ── Content (relative & z-10 to stay above the patches) ── */}
+      <div className="main-container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-12">
           
           {/* Brand & Mission Section */}
@@ -71,7 +92,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-heading text-sm md:text-base font-bold uppercase tracking-[0.15em] text-[#85702D] mb-2">
+            <h3 className="font-heading text-sm md:text-base font-bold uppercase tracking-[0.15em] text-[var(--color-bg)] mb-2">
               Explore
             </h3>
             <ul className="flex flex-col gap-3 font-body text-sm md:text-base text-slate-300">
@@ -91,7 +112,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-heading text-sm md:text-base font-bold uppercase tracking-[0.15em] text-[#85702D] mb-2">
+            <h3 className="font-heading text-sm md:text-base font-bold uppercase tracking-[0.15em] text-[var(--color-bg)] mb-2">
               Connect
             </h3>
             <address className="not-italic flex flex-col gap-4 font-body text-sm md:text-base text-slate-300">
