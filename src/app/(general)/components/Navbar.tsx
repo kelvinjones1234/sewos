@@ -1,23 +1,21 @@
 "use client";
 
+import { Adamina } from "next/font/google";
 import React, { useState } from "react";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Strength", href: "#strength" },
+    { name: "About", href: "about-us" },
     { name: "Leadership", href: "#leadership" },
     { name: "Activities", href: "#activities" },
-    { name: "Structure", href: "#structure" },
   ];
 
   return (
     /* Changed 'relative' to 'sticky' or 'fixed' usually works best for Navbars, 
        but kept 'relative' here as per your structure. */
     <nav className="sticky top-0 z-50 bg-[var(--color-bg)] border-b border-[var(--color-accent)] backdrop-blur-md">
-      
       {/* Main Container */}
       <div className="main-container py-4 flex items-center justify-between">
         {/* Logo */}
@@ -51,12 +49,32 @@ const Navbar: React.FC = () => {
           aria-label="Toggle Menu"
         >
           {isMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           )}
         </button>
@@ -65,8 +83,8 @@ const Navbar: React.FC = () => {
       {/* Mobile Dropdown - FIXED SECTION */}
       <div
         className={`lg:hidden absolute top-full left-0 w-full bg-[var(--color-bg)] border-b border-[var(--color-accent)] shadow-xl transition-all duration-300 ease-in-out z-50 ${
-          isMenuOpen 
-            ? "translate-y-0 opacity-100 visible" 
+          isMenuOpen
+            ? "translate-y-0 opacity-100 visible"
             : "-translate-y-2 opacity-0 invisible pointer-events-none"
         }`}
       >
@@ -88,3 +106,9 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
