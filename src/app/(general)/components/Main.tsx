@@ -104,74 +104,73 @@ const Main = () => {
           HERO
       ══════════════════════ */}
       <section className="relative flex items-center overflow-hidden min-h-[70vh] pt-24 pb-16">
-  {/* Background */}
-  <div className="absolute inset-0 bg-black">
-    <Image
-      src="/img3.jpeg"
-      alt="South East Women of Substance — assembly"
-      fill
-      /* Added grayscale to match the editorial look of the About page, remove if you want full color */
-      className="hero-img object-cover grayscale"
-      priority
-    />
+        {/* Background */}
+        <div className="absolute inset-0 bg-black">
+          <Image
+            src="/img3.jpeg"
+            alt="South East Women of Substance — assembly"
+            fill
+            /* Added grayscale to match the editorial look of the About page, remove if you want full color */
+            className="hero-img object-cover grayscale"
+            priority
+          />
 
-    {/* High-End Monochrome Wash & Blur matched to About Page */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent backdrop-blur-[2px]" />
-  </div>
+          {/* High-End Monochrome Wash & Blur matched to About Page */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent backdrop-blur-[2px]" />
+        </div>
 
-  {/* Optional Top border strip - matching the About page style */}
-  <div className="absolute top-0 left-0 right-0 z-10 h-[4px] bg-[var(--color-secondary)]" />
+        {/* Optional Top border strip - matching the About page style */}
+        <div className="absolute top-0 left-0 right-0 z-10 h-[4px] bg-[var(--color-secondary)]" />
 
-  {/* Content */}
-  <div className="main-container relative z-10 w-full">
-    <div className="max-w-[720px]">
-      
-      {/* Overline uses Secondary (Teal) */}
-      <p className="anim-1 font-body font-semibold uppercase text-[var(--color-secondary)] text-[0.7rem] tracking-[0.3em] mb-4 drop-shadow-sm">
-        South East Nigeria · Est. 2003
-      </p>
+        {/* Content */}
+        <div className="main-container relative z-10 w-full">
+          <div className="max-w-[720px]">
+            {/* Overline uses Secondary (Teal) */}
+            <p className="anim-1 font-body font-semibold uppercase text-[var(--color-secondary)] text-[0.7rem] tracking-[0.3em] mb-4 drop-shadow-sm">
+              South East Nigeria · Est. 2003
+            </p>
 
-      {/* H1 keeps the larger text clamp for the main landing page */}
-      <h1 className="anim-2 font-heading font-bold text-white uppercase text-[clamp(2.6rem,6vw,5.2rem)] leading-[1.1] tracking-[0.01em] drop-shadow-md">
-        Women of{" "}
-        <span className="text-[var(--color-secondary)] drop-shadow-md">
-          Substance
-        </span>
-      </h1>
+            {/* H1 keeps the larger text clamp for the main landing page */}
+            <h1 className="anim-2 font-heading font-bold text-white uppercase text-[clamp(2.6rem,6vw,5.2rem)] leading-[1.1] tracking-[0.01em] drop-shadow-md">
+              Women of{" "}
+              <span className="text-[var(--color-secondary)] drop-shadow-md">
+                Substance
+              </span>
+            </h1>
 
-      {/* Divider uses Accent (Deep Red) for a highly professional, subtle pop */}
-      <div className="anim-3 w-12 h-[3px] bg-[var(--color-accent)] my-6 drop-shadow-sm" />
+            {/* Divider uses Accent (Deep Red) for a highly professional, subtle pop */}
+            <div className="anim-3 w-12 h-[3px] bg-[var(--color-accent)] my-6 drop-shadow-sm" />
 
-      {/* Main text remains white for readability against the dark wash */}
-      <p className="anim-3 font-body text-white/90 text-[1.1rem] leading-[1.8] max-w-[580px] mb-8 drop-shadow-md">
-        A movement of over three million women across the South East
-        driving equality, policy reform, and lasting community
-        transformation.
-      </p>
+            {/* Main text remains white for readability against the dark wash */}
+            <p className="anim-3 font-body text-white/90 text-[1.1rem] leading-[1.8] max-w-[580px] mb-8 drop-shadow-md">
+              A movement of over three million women across the South East
+              driving equality, policy reform, and lasting community
+              transformation.
+            </p>
 
-      <div className="anim-4 flex flex-wrap gap-4">
-        {/* Primary Button: Uses Teal (Secondary), standardized to py-4 */}
-        <button
-          type="button"
-          onClick={() => setIsModalOpen(true)}
-          className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-4 bg-[var(--color-secondary)] hover:opacity-85 transition-opacity duration-300 shadow-lg"
-        >
-          Join Our Mission
-        </button>
+            <div className="anim-4 flex flex-wrap gap-4">
+              {/* Primary Button: Uses Teal (Secondary), standardized to py-4 */}
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-4 bg-[var(--color-secondary)] hover:opacity-85 transition-opacity duration-300 shadow-lg"
+              >
+                Join Our Mission
+              </button>
 
-        {/* Secondary Button: Frosted glass, standardized to py-4 */}
-        <button
-          type="button"
-          className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-4 bg-white/5 border border-white/50 hover:bg-white/20 hover:border-white transition-all duration-300 shadow-md backdrop-blur-sm"
-        >
-          Learn More
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+              {/* Secondary Button: Frosted glass, standardized to py-4 */}
+              <button
+                type="button"
+                className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-4 bg-white/5 border border-white/50 hover:bg-white/20 hover:border-white transition-all duration-300 shadow-md backdrop-blur-sm"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="relative bg-gray-200 border-t border-gray-300 overflow-hidden">
+      <section className="relative bg-gray-100 border-t border-gray-200 overflow-hidden">
         {/* ── Background: Abstract Patches ── */}
         <div
           className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
