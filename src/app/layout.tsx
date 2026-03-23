@@ -4,7 +4,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sewos",
-  description: "South East Women of Substance",
+  description:
+    "A massive gathering of group of women in the entire south east of the federation.",
 };
 
 export default function RootLayout({
@@ -14,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
