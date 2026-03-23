@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
         >
           {isMenuOpen ? (
             <svg
-              className="w-6 h-6"
+              className="w-9 h-9" // <-- Increased from w-6 h-6
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
             </svg>
           ) : (
             <svg
-              className="w-6 h-6"
+              className="w-9 h-9" // <-- Increased from w-6 h-6
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -105,9 +105,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-

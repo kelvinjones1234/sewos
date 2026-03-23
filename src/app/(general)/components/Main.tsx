@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import BecomeMemberModal from "./BecomeMemberModal"; // <-- 1. Imported the Modal
+import Link from "next/link";
 
 /* ── Arrow icon ── */
 const Arrow = () => (
@@ -39,12 +40,23 @@ const statsData = [
 ];
 
 const movementData = [
-  { title: "Regional Summit 2023", image: "/img1.jpeg", category: "Summit" },
-  { title: "Legislative Walk 2022", image: "/img2.jpeg", category: "Advocacy" },
+  {
+    title: "Regional Summit 2023",
+    image: "/img1.jpeg",
+    category: "Summit",
+    link: "https://youtube.com",
+  },
+  {
+    title: "Legislative Walk 2022",
+    image: "/img2.jpeg",
+    category: "Advocacy",
+    link: "https://youtube.com",
+  },
   {
     title: "Annual Substance Conference",
     image: "/img3.jpeg",
     category: "Conference",
+    link: "https://youtube.com",
   },
 ];
 
@@ -480,9 +492,12 @@ const Main = () => {
                     {item.title}
                   </h3>
                   <div>
-                    <span className="inline-flex items-center text-[0.75rem] font-semibold tracking-[0.12em] uppercase text-white border-b border-white/50 pb-0.5 group-hover:opacity-65 transition-opacity">
+                    <Link
+                      href={item.link}
+                      className="inline-flex items-center text-[0.75rem] font-semibold tracking-[0.12em] uppercase text-white border-b border-white/50 pb-0.5 group-hover:opacity-65 transition-opacity"
+                    >
                       Watch <Arrow />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>
