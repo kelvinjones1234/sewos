@@ -1,6 +1,5 @@
 "use client";
 
-import { Adamina } from "next/font/google";
 import React, { useState } from "react";
 
 const Navbar: React.FC = () => {

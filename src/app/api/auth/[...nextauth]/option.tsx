@@ -9,7 +9,7 @@ export const authOptions: NextAuthOptions = {
     signIn: "/account/login", // Redirects here if unauthenticated users try to access protected routes
   },
   providers: [
-    CredentialsProvider({
+    CredentialsProvider({ 
       name: "credentials",
       credentials: {
         email: { label: "Email", type: "text" },

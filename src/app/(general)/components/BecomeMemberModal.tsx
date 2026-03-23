@@ -5,11 +5,11 @@ interface BecomeMemberModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
+ 
 const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
-  isOpen,
-  onClose,
-}) => {
+  isOpen, 
+  onClose, 
+}) => {  
   const [fileName, setFileName] = useState<string>("");
 
   // Lock body scroll when modal is open so the background doesn't scroll
@@ -43,11 +43,6 @@ const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
         onClick={onClose}
         aria-hidden="true"
       />
-
-      {/* Modal Container */}
-      {/* 3. Added max-h-[90dvh] (Dynamic Viewport Height) to ensure it never exceeds screen height */}
-      {/* 4. Added flex flex-col to allow internal scrolling */}
-      {/* 5. Added rounded top corners on mobile to mimic a modern drawer, squared off on desktop */}
       <div
         className="relative bg-[var(--color-bg)] w-full max-w-xl mx-auto shadow-2xl overflow-hidden rounded-t-2xl sm:rounded-none flex flex-col max-h-[95dvh] sm:max-h-[90vh] anim-1 z-10"
         style={{ animation: "fadeUp 0.4s ease-out forwards" }}
@@ -104,7 +99,7 @@ const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
               <input
                 type="text"
                 required
-                className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-all"
+                className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-colors duration-200"
                 placeholder="Enter your full name"
               />
             </div>
@@ -117,7 +112,7 @@ const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
               <textarea
                 rows={2}
                 required
-                className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-all resize-none"
+                className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-colors duration-200 resize-none"
                 placeholder="Enter your full address"
               />
             </div>
@@ -131,7 +126,7 @@ const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
                 <select
                   required
                   defaultValue=""
-                  className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-all appearance-none"
+                  className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-colors duration-200 appearance-none"
                 >
                   <option value="" disabled>
                     Select State
@@ -151,7 +146,7 @@ const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
                 <input
                   type="text"
                   required
-                  className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-all"
+                  className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-colors duration-200"
                   placeholder="e.g. Ward 3"
                 />
               </div>
@@ -165,7 +160,7 @@ const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
               <input
                 type="tel"
                 required
-                className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-all"
+                className="w-full border border-gray-300 bg-white px-4 py-3 sm:py-3.5 text-[0.95rem] font-body text-gray-800 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)] transition-colors duration-200"
                 placeholder="+234 800 000 0000"
               />
             </div>
@@ -223,4 +218,6 @@ const BecomeMemberModal: React.FC<BecomeMemberModalProps> = ({
   );
 };
 
-export default BecomeMemberModal;
+export default BecomeMemberModal; 
+
+
