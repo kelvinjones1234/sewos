@@ -30,8 +30,8 @@ export default withAuth(
 export const config = {
   matcher: [
     // 3. Middleware runs on these protected routes
-    "/admin/:path*",
-    "/dashboard/:path*",
-    "/invest/:path*",
+    // "/admin/:path*",
+    // "/dashboard/:path*",
+    // "/invest/:path*",
   ],
 };

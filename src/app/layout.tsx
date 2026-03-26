@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ToastProvider } from "./(general)/context/ToastContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      {/* suppressHydrationWarning prevents browser extensions like Grammarly from crashing your app */}
+      <body suppressHydrationWarning>
+        {/* Wrapping the app in ToastProvider gives all pages access to the useToast hook */}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
+      </body>
     </html>
   );
 }

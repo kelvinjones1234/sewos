@@ -4,7 +4,7 @@ import React, { useState, Suspense } from "react"; // Added Suspense
 
 import Sidebar from "./components/Sidebar";
 import TopHeader from "./components/TopHeader";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react"; 
 
 export default function GeneralLayout({
   children,

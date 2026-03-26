@@ -9,15 +9,15 @@ import Image from "next/image";
 
 interface SidebarProps {
   isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  setIsOpen: (isOpen: boolean) => void; 
 }
 
 export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
-  const pathname = usePathname();
+  const pathname = usePathname(); 
 
   const navItems = [
-    { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-    { name: "Members", href: "/dashboard/members", icon: Users },
+    { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
+    { name: "Members", href: "/admin/dashboard/members", icon: Users },
   ];
 
   const handleLinkClick = () => {
@@ -64,20 +64,20 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           {/* ── Brand Header ── */}
           <div className="flex flex-col px-6 pt-8 pb-6 shrink-0 border-b border-gray-100">
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-10 h-10 shrink-0">
+              {/* <div className="relative w-10 h-10 shrink-0">
                 <Image
                   src="/logo2.jpeg"
                   alt="Organization Logo"
                   fill
                   className="object-contain"
                 />
-              </div>
+              </div> */}
               <div className="flex flex-col">
                 <span className="font-body font-bold uppercase text-[0.55rem] tracking-[0.25em] text-[var(--color-secondary)] mb-0.5">
                   Official Portal
                 </span>
                 <h2 className="font-heading font-bold uppercase text-[var(--color-primary)] text-lg leading-none">
-                  Asiwajuboys
+                  SEWOS
                 </h2>
               </div>
             </div>
