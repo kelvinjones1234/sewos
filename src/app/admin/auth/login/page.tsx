@@ -37,7 +37,7 @@ function LoginContent() {
   const [isLoading, setIsLoading] = useState(false);
 
   // If no callbackUrl is provided, default to the dashboard
-  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
+  const callbackUrl = searchParams.get("callbackUrl") || "/admin/dashboard";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -156,7 +156,7 @@ function LoginContent() {
             </span>
             <Link
               href={`/admin/auth/register${
-                callbackUrl !== "/dashboard"
+                callbackUrl !== "/admin/dashboard"
                   ? `?callbackUrl=${encodeURIComponent(callbackUrl)}`
                   : ""
               }`}
