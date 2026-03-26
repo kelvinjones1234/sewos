@@ -5,7 +5,7 @@
 
 // const Navbar: React.FC = () => {
 //   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [isIdModalOpen, setIsIdModalOpen] = useState(false); // Modal State 
+//   const [isIdModalOpen, setIsIdModalOpen] = useState(false); // Modal State
 
 //   const navLinks = [
 //     { name: "Home", href: "/", isModal: false },
@@ -15,12 +15,40 @@
 //     { name: "Member ID", href: "#", isModal: true }, // Flagged as a modal trigger
 //   ];
 
-//   const handleNavClick = (e: React.MouseEvent, isModal: boolean, href: string) => {
+//   const handleNavClick = (
+//     e: React.MouseEvent<HTMLAnchorElement>,
+//     isModal: boolean,
+//     href: string
+//   ) => {
+//     // 1. Handle Modal Links
 //     if (isModal) {
 //       e.preventDefault();
 //       setIsIdModalOpen(true);
 //       setIsMenuOpen(false); // Close mobile menu if open
+//       return;
+//     }
+
+//     // 2. Handle Smooth Scrolling for Anchor Links (e.g., #leadership, #activities)
+//     if (href.startsWith("#") && href !== "#") {
+//       const targetElement = document.querySelector(href);
+      
+//       if (targetElement) {
+//         e.preventDefault(); // Stop instant jump
+        
+//         // Calculate position minus the sticky navbar height (approx 80px)
+//         const navbarHeight = 80; 
+//         const elementPosition = targetElement.getBoundingClientRect().top;
+//         const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+//         window.scrollTo({
+//           top: offsetPosition,
+//           behavior: "smooth",
+//         });
+
+//         setIsMenuOpen(false); // Close mobile menu after clicking
+//       }
 //     } else {
+//       // 3. Handle Normal Page Links (e.g., /about-us)
 //       setIsMenuOpen(false);
 //     }
 //   };
@@ -35,8 +63,8 @@
 //             <div className="w-12 h-12 rounded-full overflow-hidden border border-[var(--color-accent)]">
 //               <img
 //                 alt="Logo"
-//                 src="/logo.jpg" 
-//                 className="w-12 h-12 rounded-full overflow-hidden border border-[var(--color-accent)]"
+//                 src="/logo.jpg"
+//                 className="w-12 h-12 rounded-full overflow-hidden border border-[var(--color-accent)] object-cover"
 //               />
 //             </div>
 //           </div>
@@ -95,7 +123,7 @@
 //           </div>
 //         </div>
 //       </nav>
-
+ 
 //       {/* Render Modal Outside of Nav Flow */}
 //       <MemberIdModal
 //         isOpen={isIdModalOpen}
@@ -110,23 +138,24 @@
 
 
 
-
-
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import MemberIdModal from "./MemberId";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isIdModalOpen, setIsIdModalOpen] = useState(false); // Modal State
+  const [isIdModalOpen, setIsIdModalOpen] = useState(false);
+  const pathname = usePathname(); // Added to check current page
 
+  // Updated hrefs to be absolute paths
   const navLinks = [
     { name: "Home", href: "/", isModal: false },
-    { name: "About", href: "about-us", isModal: false },
-    { name: "Leadership", href: "#leadership", isModal: false },
-    { name: "Activities", href: "#activities", isModal: false },
-    { name: "Member ID", href: "#", isModal: true }, // Flagged as a modal trigger
+    { name: "About", href: "/about-us", isModal: false },
+    { name: "Leadership", href: "/#leadership", isModal: false },
+    { name: "Activities", href: "/#activities", isModal: false },
+    { name: "Member ID", href: "#", isModal: true },
   ];
 
   const handleNavClick = (
@@ -138,31 +167,35 @@ const Navbar: React.FC = () => {
     if (isModal) {
       e.preventDefault();
       setIsIdModalOpen(true);
-      setIsMenuOpen(false); // Close mobile menu if open
+      setIsMenuOpen(false);
       return;
     }
 
-    // 2. Handle Smooth Scrolling for Anchor Links (e.g., #leadership, #activities)
-    if (href.startsWith("#") && href !== "#") {
-      const targetElement = document.querySelector(href);
-      
-      if (targetElement) {
-        e.preventDefault(); // Stop instant jump
-        
-        // Calculate position minus the sticky navbar height (approx 80px)
-        const navbarHeight = 80; 
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+    // 2. Handle Hash Links (Leadership, Activities)
+    if (href.startsWith("/#")) {
+      // If we are currently on the home page, intercept and smooth scroll
+      if (pathname === "/") {
+        e.preventDefault();
+        const targetId = href.substring(1); // Converts "/#leadership" to "#leadership"
+        const targetElement = document.querySelector(targetId);
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
+        if (targetElement) {
+          const navbarHeight = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - navbarHeight;
 
-        setIsMenuOpen(false); // Close mobile menu after clicking
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
       }
+      // If we are NOT on the home page, we do NOT e.preventDefault().
+      // We let the browser natively navigate to "/#leadership" which will load the home page and jump to the section.
+      
+      setIsMenuOpen(false);
     } else {
-      // 3. Handle Normal Page Links (e.g., /about-us)
+      // 3. Handle Normal Page Links
       setIsMenuOpen(false);
     }
   };

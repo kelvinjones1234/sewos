@@ -17,7 +17,7 @@ const Arrow = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
       d="M4 10h12M10 4l6 6-6 6"
-    />
+    /> 
   </svg>
 );
 
