@@ -11,7 +11,7 @@ const Arrow = () => (
     fill="none"
     stroke="currentColor"
     strokeWidth={1.5}
-    className="w-4 h-4 ml-2 shrink-0" 
+    className="w-4 h-4 ml-2 shrink-0"
   >
     <path
       strokeLinecap="round"
@@ -334,7 +334,7 @@ const Main = () => {
       {/* ══════════════════════
           LEADERSHIP
       ══════════════════════ */}
-      <section className="w-full bg-white">
+      <section className="w-full bg-white" id="leadership">
         {/* Header */}
         <div className="main-container py-[4rem]">
           <div className="flex items-center gap-3.5 mb-6">
@@ -439,7 +439,7 @@ const Main = () => {
       {/* ══════════════════════
           PAST EVENTS
       ══════════════════════ */}
-      <section className="bg-[var(--color-bg)]">
+      <section className="bg-[var(--color-bg)]" id="activities">
         <div className="main-container py-20 lg:py-28">
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
