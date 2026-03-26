@@ -27,7 +27,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   };
 
   const handleLogout = async () => {
-    await signOut({ callbackUrl: "/auth/login" });
+    await signOut({ callbackUrl: "/admin/auth/login" });
   };
 
   return (
@@ -86,7 +86,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           </div>
 
           {/* ── Navigation Links ── */}
-          <div className="flex-1 overflow-y-auto no-scrollbar flex flex-col gap-1.5 px-4 py-6">
+          <div className="flex-1 overflow-y-auto no-scrollbar flex flex-col gap-1.5 px-4">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               const Icon = item.icon;

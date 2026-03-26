@@ -155,7 +155,7 @@ function LoginContent() {
               Don't have an account?
             </span>
             <Link
-              href={`/auth/register${
+              href={`/admin/auth/register${
                 callbackUrl !== "/dashboard"
                   ? `?callbackUrl=${encodeURIComponent(callbackUrl)}`
                   : ""

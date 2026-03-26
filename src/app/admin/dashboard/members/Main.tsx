@@ -591,7 +591,7 @@ export default function MembersMain() {
 
   return (
     <section className="relative pb-24 min-h-screen flex flex-col bg-gray-50/30">
-      <div className="w-full max-w-[1400px] mx-auto flex flex-col flex-1 gap-6 pt-10">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col flex-1 gap-6">
 
         {/* ── Header ── */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 pb-6">
@@ -602,7 +602,7 @@ export default function MembersMain() {
                 Network
               </span>
             </div>
-            <h2 className="font-heading font-bold text-gray-900 text-[clamp(2.2rem,4vw,3rem)] leading-[1.1] tracking-[0.01em]">
+            <h2 className="font-heading font-bold text-gray-900 text-[clamp(1.5rem,2.5vw,3rem)] leading-[1.1] tracking-[0.01em]">
               Member <span className="text-[var(--color-secondary)]">Directory</span>
             </h2>
             <div className="w-12 h-[3px] bg-[var(--color-accent)] my-5" />

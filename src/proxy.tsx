@@ -22,7 +22,7 @@ export default withAuth(
       authorized: ({ token }) => !!token,
     },
     pages: {
-      signIn: "/auth/login", // Redirects here if unauthenticated
+      signIn: "/admin/auth/login", // Redirects here if unauthenticated
     },
   },
 );
@@ -30,7 +30,7 @@ export default withAuth(
 export const config = {
   matcher: [
     // 3. Middleware runs on these protected routes
-    // "/admin/:path*",
+    "/admin/dashboard/:path*",
     // "/dashboard/:path*",
     // "/invest/:path*",
   ],

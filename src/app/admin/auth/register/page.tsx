@@ -57,7 +57,7 @@ export default function RegisterPage() {
       }
 
       toast("Account created successfully.", "success");
-      router.push("/auth/login");
+      router.push("/admin/auth/login");
     } catch (err) {
       toast("An unexpected error occurred. Please try again.", "error");
       setIsLoading(false);
@@ -209,7 +209,7 @@ export default function RegisterPage() {
               Already have an account?
             </span>
             <Link
-              href="/auth/login"
+              href="/admin/auth/login"
               className="inline-flex items-center text-[0.75rem] font-semibold tracking-[0.12em] uppercase text-[var(--color-secondary)] border-b border-[var(--color-secondary)] pb-0.5 hover:opacity-65 transition-opacity"
             >
               Sign In <Arrow />

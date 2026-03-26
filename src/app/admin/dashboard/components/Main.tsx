@@ -229,7 +229,7 @@ export default function DashboardMain() {
 
   return (
     <section className="relative pb-24 min-h-screen flex flex-col bg-gray-50/30">
-      <div className="w-full max-w-[1400px] mx-auto flex flex-col flex-1 gap-6 pt-10">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col flex-1 gap-6">
         {/* ── Header ── */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 pb-6">
           <div>
@@ -239,7 +239,7 @@ export default function DashboardMain() {
                 Overview
               </span>
             </div>
-            <h2 className="font-heading font-bold text-gray-900 text-[clamp(2.2rem,4vw,3rem)] leading-[1.1] tracking-[0.01em]">
+            <h2 className="font-heading font-bold text-gray-900 text-[clamp(1.5rem,2.5vw,3rem)] leading-[1.1] tracking-[0.01em]">
               System{" "}
               <span className="text-[var(--color-secondary)]">Dashboard</span>
             </h2>
@@ -253,7 +253,7 @@ export default function DashboardMain() {
           <button
             onClick={() => loadStats(true)}
             disabled={isRefreshing}
-            className="font-body font-semibold uppercase text-gray-600 text-[0.72rem] tracking-[0.18em] px-8 py-4 border border-gray-200 bg-white hover:bg-gray-50 hover:text-gray-900 transition-all shadow-sm flex justify-center items-center gap-3 disabled:opacity-60"
+            className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-4 bg-[var(--color-secondary)] hover:opacity-85 transition-opacity duration-300 shadow-lg flex justify-center items-center gap-3"
           >
             <RefreshCw
               size={16}
