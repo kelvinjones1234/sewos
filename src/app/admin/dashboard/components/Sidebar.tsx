@@ -66,7 +66,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
             <div className="flex items-center gap-3 mb-4">
               {/* <div className="relative w-10 h-10 shrink-0">
                 <Image
-                  src="/logo2.jpeg"
+                  src="/logo.jpg"
                   alt="Organization Logo"
                   fill
                   className="object-contain"

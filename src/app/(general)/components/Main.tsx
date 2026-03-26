@@ -11,7 +11,7 @@ const Arrow = () => (
     fill="none"
     stroke="currentColor"
     strokeWidth={1.5}
-    className="w-4 h-4 ml-2 shrink-0"
+    className="w-4 h-4 ml-2 shrink-0" 
   >
     <path
       strokeLinecap="round"
@@ -41,10 +41,10 @@ const statsData = [
 
 const movementData = [
   {
-    title: "Regional Summit 2023",
-    image: "/img1.jpeg",
+    title: "South East Women of Substance Rally Akwa",
+    image: "/img9.png",
     category: "Summit",
-    link: "https://youtube.com",
+    link: "https://www.youtube.com/watch?v=QcusWI8kQiw&t=47s&pp=ygUdc291dGggZWFzdCB3b21lbiBvZiBzdWJzdGFuY2U%3D",
   },
   {
     title: "Legislative Walk 2022",
@@ -65,25 +65,25 @@ const teamData = [
     name: "High Chief Samson Umejidike Ifediba",
     role: "President / Founder",
     linkText: "Meet Our Founder",
-    image: "/img1.jpeg",
+    image: "/img1.jpg",
   },
   {
     name: "Lolo Madam Doris Umejidike Ifediba",
     role: "Director",
     linkText: "Meet Our Director",
-    image: "/img2.jpeg",
+    image: "/img5.jpg",
   },
   {
     name: "Virginia Okefor",
     role: "Secretary",
     linkText: "Meet Our Secretary",
-    image: "/img3.jpeg",
+    image: "/img6.jpg",
   },
   {
     name: "Elizabeth Okorie",
     role: "Director",
     linkText: "Meet Our Director",
-    image: "/img2.jpeg",
+    image: "/img7.jpg",
   },
 ];
 
@@ -151,7 +151,7 @@ const Main = () => {
             </h1>
 
             {/* Divider uses Accent (Deep Red) for a highly professional, subtle pop */}
-            <div className="anim-3 w-12 h-[3px] bg-[var(--color-accent)] my-6 drop-shadow-sm" />
+            <div className="anim-3 w-28 h-[3px] bg-[var(--color-accent)] my-6 drop-shadow-sm" />
 
             {/* Main text remains white for readability against the dark wash */}
             <p className="anim-3 font-body text-white/90 text-[1.1rem] leading-[1.8] max-w-[580px] mb-8 drop-shadow-md">
@@ -171,12 +171,12 @@ const Main = () => {
               </button>
 
               {/* Secondary Button: Frosted glass, standardized to py-4 */}
-              <button
-                type="button"
+              <Link
+                href="/about-us"
                 className="font-body font-semibold uppercase text-white text-[0.72rem] tracking-[0.18em] px-8 py-4 bg-white/5 border border-white/50 hover:bg-white/20 hover:border-white transition-all duration-300 shadow-md backdrop-blur-sm"
               >
-                Learn More
-              </button>
+                About us
+              </Link>
             </div>
           </div>
         </div>
@@ -455,7 +455,7 @@ const Main = () => {
               </h2>
             </div>
             <a
-              href="#"
+              href="https://www.youtube.com/@southeastwomenofsubstanceo8954/videos"
               className="self-start md:self-end inline-flex items-center text-[0.75rem] font-semibold tracking-[0.12em] uppercase text-[var(--color-secondary)] border-b border-[var(--color-secondary)] pb-0.5 hover:opacity-65 transition-opacity"
             >
               View All <Arrow />

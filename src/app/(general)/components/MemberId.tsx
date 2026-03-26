@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { toPng } from "html-to-image";
 import { getMemberById } from "@/app/actions/getMember";
 
@@ -65,10 +66,7 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
       if (result.success && result.data) {
         const memberData = result.data as unknown as Member;
         setMember(memberData);
-        localStorage.setItem(
-          "sewosMemberProfile",
-          JSON.stringify(memberData),
-        );
+        localStorage.setItem("sewosMemberProfile", JSON.stringify(memberData));
       } else {
         setError(result.error || "Membership ID not found. Please try again.");
       }
@@ -154,8 +152,18 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
               onClick={onClose}
               className="text-gray-400 hover:text-[var(--color-accent)] transition-colors p-2 -mr-2 bg-gray-50 sm:bg-transparent rounded-full sm:rounded-none"
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -163,7 +171,8 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
           {!member && (
             <div className="animate-fade-in">
               <p className="font-body text-[0.95rem] text-gray-600 mb-6">
-                Enter your unique 8-character Membership ID to retrieve and download your official digital ID card.
+                Enter your unique 8-character Membership ID to retrieve and
+                download your official digital ID card.
               </p>
               <form onSubmit={handleSearch} className="space-y-4">
                 <div>
@@ -201,7 +210,6 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
           {member && (
             <div className="flex flex-col items-center animate-fade-in">
               <div className="w-full overflow-x-auto pb-4 flex justify-center no-scrollbar">
-                
                 {/* ID Card Wrapper */}
                 <div
                   ref={cardRef}
@@ -210,23 +218,41 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
                   {!isFlipped ? (
                     /* --- FRONT OF CARD --- */
                     <div className="flex flex-col h-full w-full bg-white relative">
-                      
                       {/* Top Logo Container */}
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[60px] bg-white rounded-b-3xl z-20 flex justify-center items-start pt-2 shadow-sm">
-                        <div className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center border-2 border-[var(--color-accent)] overflow-hidden text-[var(--color-accent)] text-[8px] font-bold text-center leading-tight p-1">
-                          Sewos Logo
+                        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-[var(--color-accent)] overflow-hidden">
+                          <Image
+                            src="/logo.jpg"
+                            width={48}
+                            height={48}
+                            alt="SEWOS Logo"
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       </div>
 
                       {/* SVG Background Curves mapped to CSS variables */}
                       <div className="absolute top-0 w-full h-[240px] pointer-events-none z-0">
-                        <svg viewBox="0 0 300 240" preserveAspectRatio="none" className="w-full h-full">
+                        <svg
+                          viewBox="0 0 300 240"
+                          preserveAspectRatio="none"
+                          className="w-full h-full"
+                        >
                           {/* Accent Layer */}
-                          <path d="M0,185 C100,265 200,205 300,145 L300,0 L0,0 Z" fill="var(--color-accent)" />
+                          <path
+                            d="M0,185 C100,265 200,205 300,145 L300,0 L0,0 Z"
+                            fill="var(--color-accent)"
+                          />
                           {/* White Gap Layer */}
-                          <path d="M0,178 C100,258 200,198 300,138 L300,0 L0,0 Z" fill="#FFFFFF" />
+                          <path
+                            d="M0,178 C100,258 200,198 300,138 L300,0 L0,0 Z"
+                            fill="#FFFFFF"
+                          />
                           {/* Main Secondary Color Background */}
-                          <path d="M0,170 C100,250 200,190 300,130 L300,0 L0,0 Z" fill="var(--color-secondary)" />
+                          <path
+                            d="M0,170 C100,250 200,190 300,130 L300,0 L0,0 Z"
+                            fill="var(--color-secondary)"
+                          />
                         </svg>
                       </div>
 
@@ -269,19 +295,43 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
                         {/* Info Grid (Updated with real Prisma schema data) */}
                         <div className="w-full flex flex-col gap-2.5 text-left pl-1">
                           <div className="flex items-center text-[12px] font-bold">
-                            <span className="w-[65px] text-[var(--color-accent)]">ID NO</span>
-                            <span className="mr-3 text-[var(--color-accent)]">:</span>
-                            <span className="text-gray-900">{member.membershipId}</span>
+                            <span className="w-[65px] text-[var(--color-accent)]">
+                              ID NO
+                            </span>
+                            <span className="mr-3 text-[var(--color-accent)]">
+                              :
+                            </span>
+                            <span className="text-gray-900">
+                              {member.membershipId}
+                            </span>
                           </div>
                           <div className="flex items-center text-[12px] font-bold">
-                            <span className="w-[65px] text-[var(--color-accent)]">STATE</span>
-                            <span className="mr-3 text-[var(--color-accent)]">:</span>
-                            <span className="text-gray-900 uppercase truncate" title={member.state}>{member.state}</span>
+                            <span className="w-[65px] text-[var(--color-accent)]">
+                              STATE
+                            </span>
+                            <span className="mr-3 text-[var(--color-accent)]">
+                              :
+                            </span>
+                            <span
+                              className="text-gray-900 uppercase truncate"
+                              title={member.state}
+                            >
+                              {member.state}
+                            </span>
                           </div>
                           <div className="flex items-center text-[12px] font-bold">
-                            <span className="w-[65px] text-[var(--color-accent)]">WARD</span>
-                            <span className="mr-3 text-[var(--color-accent)]">:</span>
-                            <span className="text-gray-900 uppercase truncate" title={member.ward}>{member.ward}</span>
+                            <span className="w-[65px] text-[var(--color-accent)]">
+                              WARD
+                            </span>
+                            <span className="mr-3 text-[var(--color-accent)]">
+                              :
+                            </span>
+                            <span
+                              className="text-gray-900 uppercase truncate"
+                              title={member.ward}
+                            >
+                              {member.ward}
+                            </span>
                           </div>
                         </div>
 
@@ -294,13 +344,17 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
                                 className="bg-gray-900 rounded-sm"
                                 style={{
                                   width: `${Math.random() > 0.6 ? 2.5 : 1.5}px`,
-                                  height: `${Math.random() > 0.85 ? '75%' : '100%'}`,
+                                  height: `${Math.random() > 0.85 ? "75%" : "100%"}`,
                                 }}
                               />
                             ))}
                           </div>
                           <p className="text-[7px] text-gray-800 tracking-[0.2em] mt-1 font-mono font-bold">
-                            {member.membershipId}-{(new Date(member.createdAt).getTime()).toString().slice(-8)}
+                            {member.membershipId}-
+                            {new Date(member.createdAt)
+                              .getTime()
+                              .toString()
+                              .slice(-8)}
                           </p>
                         </div>
                       </div>
@@ -310,7 +364,7 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
                     <div className="flex flex-col h-full w-full bg-white p-6 relative text-gray-800 border-4 border-[var(--color-secondary)]">
                       <div className="w-full border-b-2 border-[var(--color-accent)] pb-3 mb-5 mt-4 text-center">
                         <h2 className="font-heading font-bold tracking-[0.15em] text-lg uppercase text-[var(--color-secondary)]">
-                          Asiwaju Boys
+                          Sewos
                         </h2>
                         <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mt-1">
                           Official Property
@@ -319,20 +373,29 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
 
                       <div className="flex-1 flex flex-col gap-4 text-xs leading-relaxed text-gray-700 px-1 text-justify font-medium">
                         <p>
-                          <strong>1.</strong> This identity card is strictly non-transferable and remains the absolute property of the issuing organization.
+                          <strong>1.</strong> This identity card is strictly
+                          non-transferable and remains the absolute property of
+                          the issuing organization.
                         </p>
                         <p>
-                          <strong>2.</strong> The bearer whose details appear on the reverse side is an officially registered member and is subject to the organization's code of conduct.
+                          <strong>2.</strong> The bearer whose details appear on
+                          the reverse side is an officially registered member
+                          and is subject to the organization's code of conduct.
                         </p>
                         <p>
-                          <strong>3.</strong> If this card is found, please drop it at the nearest police station or return it to the organization's headquarters.
+                          <strong>3.</strong> If this card is found, please drop
+                          it at the nearest police station or return it to the
+                          organization's headquarters.
                         </p>
                       </div>
 
                       <div className="w-full mt-auto pt-6 pb-4 flex flex-col items-center">
                         <div
-                          className="font-[cursive] text-2xl mb-1 opacity-90 text-[var(--color-secondary)]"
-                          style={{ fontFamily: "'Brush Script MT', cursive, sans-serif" }}
+                          className="font-[cursive] text-2xl mb-1 opacity-90"
+                          style={{
+                            fontFamily:
+                              "'Brush Script MT', cursive, sans-serif",
+                          }}
                         >
                           Authorized
                         </div>
@@ -360,7 +423,11 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
                     stroke="currentColor"
                     className={`w-4 h-4 transition-transform duration-300 ${isFlipped ? "rotate-180" : ""}`}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+                    />
                   </svg>
                   {isFlipped ? "View Front" : "View Back"}
                 </button>
@@ -370,7 +437,9 @@ const MemberIdModal: React.FC<MemberIdModalProps> = ({ isOpen, onClose }) => {
                   disabled={isDownloading}
                   className="flex justify-center items-center font-body font-semibold uppercase text-white text-[0.75rem] tracking-[0.18em] px-8 py-4 bg-[var(--color-secondary)] hover:opacity-85 transition-opacity duration-300 shadow-md disabled:opacity-70 disabled:cursor-not-allowed rounded-lg"
                 >
-                  {isDownloading ? "Generating..." : `Download ${isFlipped ? "Back" : "Front"}`}
+                  {isDownloading
+                    ? "Generating..."
+                    : `Download ${isFlipped ? "Back" : "Front"}`}
                 </button>
 
                 <button

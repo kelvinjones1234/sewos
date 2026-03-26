@@ -75,7 +75,7 @@ const Footer = () => {
 
       {/* ── Content (relative & z-10 to stay above the patches) ── */}
       <div className="main-container relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
           
           {/* Brand & Mission Section */}
           <div className="flex flex-col gap-5">
@@ -90,25 +90,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-heading text-sm md:text-base font-bold uppercase tracking-[0.15em] text-[var(--color-bg)] mb-2">
-              Explore
-            </h3>
-            <ul className="flex flex-col gap-3 font-body text-sm md:text-base text-slate-300">
-              {quickLinks.map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link.href}
-                    className="group flex items-center gap-2 hover:text-[var(--color-secondary)] transition-colors duration-300"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-600 group-hover:bg-[var(--color-secondary)] transition-colors duration-300" />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          
 
           {/* Contact Info */}
           <div className="flex flex-col gap-4">

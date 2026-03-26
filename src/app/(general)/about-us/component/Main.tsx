@@ -77,14 +77,16 @@ export default function AboutPage() {
 
             <h1 className="font-heading font-bold text-white uppercase text-[clamp(2.4rem,5vw,4.2rem)] leading-[1.1] tracking-[0.01em]">
               The Voice of <br />
-              <span className="text-[var(--color-secondary)]">South East Women</span>
+              <span className="text-[var(--color-secondary)]">
+                South East Women
+              </span>
             </h1>
-            
+
             <div className="w-12 h-[3px] bg-[var(--color-accent)] my-6" />
 
             <p className="font-body text-white/90 text-[1.1rem] leading-[1.8] max-w-[580px]">
-              Rooted in the heart of Anambra State, we are a formalized movement 
-              dedicated to regional mobilization, political awareness, and the 
+              Rooted in the heart of Anambra State, we are a formalized movement
+              dedicated to regional mobilization, political awareness, and the
               unwavering empowerment of the Nigerian woman.
             </p>
           </div>
@@ -110,26 +112,32 @@ export default function AboutPage() {
               </h2>
 
               <p className="font-body text-gray-600 text-[0.95rem] leading-[1.85] mb-6">
-                The South East Women of Substance (SEWOS) Organization is a formally 
-                incorporated body headquartered in Awka. Since our registration in 2015, 
-                we have become synonymous with large-scale community action and 
-                the celebration of women as the ultimate "Nation Builders."
+                The South East Women of Substance (SEWOS) Organization is a
+                formally incorporated body headquartered in Awka. Since our
+                registration in 2015, we have become synonymous with large-scale
+                community action and the celebration of women as the ultimate
+                "Nation Builders."
               </p>
 
               <p className="font-body text-gray-600 text-[0.95rem] leading-[1.85] mb-8">
-                Our presence is most felt during our hallmark rallies, where 
-                hundreds of thousands of women gather to align on political 
-                direction, economic growth, and social solidarity within the South East.
+                Our presence is most felt during our hallmark rallies, where
+                hundreds of thousands of women gather to align on political
+                direction, economic growth, and social solidarity within the
+                South East.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
                 <div className="flex items-center gap-3">
-                   <MapPin className="text-[var(--color-accent)] w-5 h-5" />
-                   <span className="text-sm font-bold text-[var(--color-primary)]">Headquartered in Awka</span>
+                  <MapPin className="text-[var(--color-accent)] w-5 h-5" />
+                  <span className="text-sm font-bold text-[var(--color-primary)]">
+                    Headquartered in Awka
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
-                   <Users className="text-[var(--color-accent)] w-5 h-5" />
-                   <span className="text-sm font-bold text-[var(--color-primary)]">350,000+ Strong Network</span>
+                  <Users className="text-[var(--color-accent)] w-5 h-5" />
+                  <span className="text-sm font-bold text-[var(--color-primary)]">
+                    350,000+ Strong Network
+                  </span>
                 </div>
               </div>
             </div>
@@ -137,9 +145,10 @@ export default function AboutPage() {
             <div className="w-full lg:w-1/2 relative flex justify-center">
               <div className="relative aspect-[4/5] w-[85%] ml-auto z-10">
                 <Image
-                  src="/img1.jpeg"
+                  src="/img3.jpeg"
                   alt="Women of Substance Mobilization Rally"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover shadow-2xl"
                 />
                 <div className="absolute -top-5 -right-5 w-24 h-24 border-t-[4px] border-r-[4px] border-[var(--color-secondary)]" />
@@ -196,7 +205,7 @@ export default function AboutPage() {
               Our Track Record
             </h2>
             <p className="font-body text-white/70 text-[0.95rem] leading-[1.8]">
-              Since our formalization, we have consistently mobilized the women 
+              Since our formalization, we have consistently mobilized the women
               of the South East for significant political and social causes.
             </p>
           </div>
@@ -229,8 +238,9 @@ export default function AboutPage() {
             Join the Movement
           </h2>
           <p className="font-body text-gray-600 max-w-[600px] mb-8">
-            Connect with one of the most active women’s organizations in the 
-            South East. Together, we continue our legacy of impact and collective growth.
+            Connect with one of the most active women’s organizations in the
+            South East. Together, we continue our legacy of impact and
+            collective growth.
           </p>
           <button
             type="button"
