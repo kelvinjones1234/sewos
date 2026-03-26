@@ -43,20 +43,20 @@ const movementData = [
   {
     title: "South East Women of Substance Rally Akwa",
     image: "/img9.png",
-    category: "Summit",
+    category: "Rally",
     link: "https://www.youtube.com/watch?v=QcusWI8kQiw&t=47s&pp=ygUdc291dGggZWFzdCB3b21lbiBvZiBzdWJzdGFuY2U%3D",
   },
   {
-    title: "Legislative Walk 2022",
-    image: "/img2.jpeg",
+    title: "South East Women Of Substance SUMMIT",
+    image: "/img10.png",
     category: "Advocacy",
-    link: "https://youtube.com",
+    link: "https://www.youtube.com/watch?v=9BrBDrtsS-Y",
   },
   {
-    title: "Annual Substance Conference",
-    image: "/img3.jpeg",
-    category: "Conference",
-    link: "https://youtube.com",
+    title: "SEWOS Fund Raising",
+    image: "/img11.png",
+    category: "Fund Raising",
+    link: "https://youtu.be/IQfTgLZuJqw",
   },
 ];
 
